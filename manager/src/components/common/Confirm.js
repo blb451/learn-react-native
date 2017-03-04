@@ -5,6 +5,7 @@ import { Button } from './Button';
 
 const Confirm = ({ children, visible, onAccept, onDecline }) => {
   const { containerStyle, textStyle, cardSectionStyle } = styles;
+
   return (
     <Modal
       visible={visible}
@@ -14,7 +15,9 @@ const Confirm = ({ children, visible, onAccept, onDecline }) => {
     >
       <View style={containerStyle}>
         <CardSection style={cardSectionStyle}>
-          <Text style={textStyle}>{children}</Text>
+          <Text style={textStyle}>
+            {children}
+          </Text>
         </CardSection>
 
         <CardSection>
@@ -22,7 +25,6 @@ const Confirm = ({ children, visible, onAccept, onDecline }) => {
           <Button onPress={onDecline}>No</Button>
         </CardSection>
       </View>
-
     </Modal>
   );
 };
@@ -31,7 +33,7 @@ const styles = {
   cardSectionStyle: {
     justifyContent: 'center'
   },
-  textStyles: {
+  textStyle: {
     flex: 1,
     fontSize: 18,
     textAlign: 'center',
